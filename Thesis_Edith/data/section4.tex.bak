@@ -1,0 +1,21 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.  
+%
+%
+%  Author: Sean Zachary Roberson
+%  Version 3.17.09
+%  Last Updated: 9/21/2017
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                           SECTION IV
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\chapter{\uppercase {Preliminary conclusions \label{cha:Summary}}}
+In general the examples presented show that the GFEM can be more efficient than the standard FEM, with simulation times that are 1/6 th of the reference solution used, and presenting acceptable solution accuracy,  with errors close to 5$\%$ when compared to the proposed reference solution for the best GFEM performances.  I propose to further investigate the potential of the method with models that have more challenging geometries as detailed in the previous chapter since they present structures of more interest to exploration seismology.
+
+A remark of the GFEM method is, as shown in example 1, that its solution accuracy depends on the source - mesh size relationship, being the minimum source radius required equal to the mesh size. 
+

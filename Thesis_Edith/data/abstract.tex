@@ -1,0 +1,25 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.  
+%
+%
+%  Author: Sean Zachary Roberson
+%  Version 3.17.09
+%  Last Updated: 9/21/2017
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                           ABSTRACT 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{ABSTRACT}
+\addcontentsline{toc}{chapter}{ABSTRACT} % Needs to be set to part, so the TOC doesnt add 'CHAPTER ' prefix in the TOC.
+
+\pagestyle{plain} % No headers, just page numbers
+\pagenumbering{roman} % Roman numerals
+\setcounter{page}{2}
+
+\indent Numerical methods for the simulation of wave propagation have extensive applications in exploration seismology as in velocity estimation and subsurface imaging. Among numerical methods, the standard finite element method (FEM) presents important advantages such as the ability to handle meshes to conform to complex geometry, making this technique attractive. However its main drawback is the longer simulation time it may take compared to other numerical techniques. Nonetheless, a modified version, the generalized finite element method (GFEM), has the potential to overcome this limitation. Hence,
+I have applied the GFEM to simulate the acoustic wave propagation to test its performance against the standard FEM in models that are relevant to exploration seismology. The GFEM exploits the partition of unity property of the FEM standard basis functions by incorporating additional user-defined enrichment functions to improve the efficiency of the simulation. Specifically, I have incorporated plane waves at different directions to mimic the radial propagation of transient acoustic waves, with the goal of accelerating the solution convergence. I have tested this approach  using models of interest in  exploration seismology, including a low velocity layer, a karst structure and topography. Results from these specific models show that the GFEM approach is more efficient than a standard FEM reference solution, with an acceptable solution accuracy.
+
+\pagebreak{}

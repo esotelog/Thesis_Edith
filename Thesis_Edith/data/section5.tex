@@ -1,0 +1,23 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.  
+%
+%
+%  Author: Sean Zachary Roberson
+%  Version 3.17.09
+%  Last Updated: 9/21/2017
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                           SECTION IV
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\chapter{\uppercase {Conclusion}}
+The results for the seismic models presented show that the GFEM  approach for the  acoustic wave simulation has a positive impact in improving the computational efficiency compared to a reference solution obtained with the standard FEM in a fine mesh, with overall good accuracy and low dispersion effects. This acceleration happens because the GFEM technique allows to use coarser meshes, as user defined basis functions are incorporated to improve the solution approximation. For this work,this user defined basis functions are plane waves in different directions with a wavenumber equal to the highest wavenumber in the medium. For the examples presented, these enrichments are capable to approximate the radial behavior of the acoustic wave propagation and its characteristic wavelength. However, there is a trade off between mesh size and number of plane wave directions. In general, as the mesh size increases, the number of plane wave directions needs to be increased as well to keep the solution free of artifacts. Thus, The essential aspect in this methodology is to use the minimum number of plane wave directions and the coarsest possible mesh, and still obtain a solution free of artifacts together with a faster convergence.  However, the maximum mesh size cannot be increased indefinitely at will since it is constrained by the smallest wavelength in the medium, as this wavelength must be sampled by a minimum number of cells for the solution to present a low error and be free of artifacts. Our results show that the smallest wavelength should be covered at least 3 cells to obtain a good solution. Since the maximum mesh size depends on the wavenumber of the medium, then it is also related to the wave frequency - velocity ratio of the medium. This detail evidences that this particular GFEM implementation takes into account the effect of an external source and not only the properties of the medium. 
+
+On the other hand, in this work I also showed the ease with which flexible refinement can be incorporated with the GFEM approach, and in general with any FEM-related approaches. This is an important advantage since it allows to conform the mesh to complex geometrical boundaries which are commonly encountered in geological structures, and in this work I specifically treated the case of a karst inclusion and topography. This precise meshing allows an accurate simulation without the staircase effect or excessive mesh refinement that are, for instance,  commonly present in finite difference implementations.
+
+
+

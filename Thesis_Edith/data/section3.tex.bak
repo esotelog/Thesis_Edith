@@ -1,0 +1,182 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.  
+%
+%
+%  Author: Sean Zachary Roberson
+%  Version 3.17.09
+%  Last Updated: 9/21/2017
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                           SECTION III
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{ \uppercase {Numerical Examples}}
+I present a couple of numerical examples that show the potential advantages of the GFEM approach when compared to the standard FEM regarding accuracy and simulation time. In these examples I use a model in $R^2$ whose dimensions are 800 m in the horizontal direction and 400 m  in the vertical direction. I also include a seismic source as defined in equation \ref{Eq2.15}, with central frequency $f_o=$40 Hz. For every example I find a reference solution in a fine mesh with mesh size $h=$1.5625 m applying the standard FEM, and compare the performance against the proposed GFEM approach, presenting error estimates versus simulation time. I also find additional solutions with the standard FEM for mesh sizes of $2h$ and $4h$ to compare the overall performance against the GFEM technique. In general, I apply the  GFEM in coarser meshes, with sizes of either $4h$ or $8h$, and with number of plane wave directions $q$ of either 3 or 5.
+
+\section{Example1: Homogeneous medium}
+For this case, I  assume that the medium has an acoustic velocity of 1800 m/s. I  place a seismic source at the center of the model, I also locate receivers in a radial configuration at 50 m and 100 m from the center of the source, with a receiver spacing of 5 degrees as shown in Figure \ref{fig:3.1}. For this case, I apply a simulation time of 0.12 s. 
+
+ \begin{figure}[h!]
+	\centering
+	\includegraphics[width=9cm, height=5cm]{figures/Homogeneous_medium.pdf}
+	\caption{Homogeneous model of example 1, with a seismic source in the center (red star) and two sets of receivers (dotted circles) at 50 m and at 100 m from the center of the source.}
+	\label{fig:3.1}
+\end{figure}
+
+\subsection{Effect of Source Size}
+
+%GFEM
+%********************
+Since I am using a source with a finite dimension for these simulations, I investigate the effect of source size on the accuracy of the GFEM solution. Figure \ref{fig:3.2} and Figure \ref{fig:3.3} show the effect of source radius on the simulated seismograms with the GFEM. I tested with source radii equal to the mesh size and smaller than the mesh size used. The plots show that to obtain the best solution approximation the source radius should be at least equal (or greater) to the mesh size used in the simulations as shown in Figure \ref{fig:3.4}.
+
+ \begin{figure}[h!]
+ 		\centering
+		\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=8cm, height=5cm]{figures/fem_q3_r50_0deg.pdf} 
+			     \caption{}
+				%\label{fig:trace1}
+		\end{subfigure}
+
+		\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=8cm, height=5cm]{figures/fem_q5_r50_0deg.pdf}
+			   \caption{}
+				%\label{fig:trace3}
+		\end{subfigure}
+ 
+	\caption{Solutions for receivers at 50 m from the source(see Figure \ref{fig:3.1}) . (a) Seismograms at 0 deg showing the  reference solution and 2 solutions  with GFEM  with plane waves in 3 directions, mesh size $8h$ and source radius of $8h$ and $4h$ (b) Seismograms  at 0 deg showing the  reference solution and 2 solutions  with GFEM  with plane waves in 5 directions, mesh size $8h$ and source radius of  $8h$ and $4h$}
+	\label{fig:3.2}
+\end{figure}
+
+
+ \begin{figure}[h!]
+ 		\centering
+		\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=8cm, height=6cm]{figures/error_gfem_50m.pdf} 
+			     \caption{}
+				%\label{fig:trace1}
+		\end{subfigure}
+
+		\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=8cm, height=6cm]{figures/error_gfem_100m.pdf}
+			   \caption{}
+				%\label{fig:trace3}
+		\end{subfigure}
+ 
+	\caption{(a) Maximum cross correlation error  for all  seismograms at 50 m from the center of the source,  (b)  Maximum cross correlation error for all seismograms at 100 m from the center of the source.  GFEM parameters for (a) and (b): 3 and 5 directions, mesh size $8h$ and $4h$, and source radius  $8h$ and  $4h$.}
+	\label{fig:3.3}
+\end{figure}
+
+
+ \begin{figure}[h!]
+	\centering
+	\includegraphics[width=4cm, height=4cm]{figures/source_size.pdf}
+	\caption{Sketch showing the minimum source radius required according to mesh size to get a good solution approximation with the GFEM approach}
+	\label{fig:3.4}
+\end{figure}
+
+
+\clearpage
+\subsection{Comparison of Performance}
+
+Figure \ref{fig:3.5} shows the number of DOF and the simulation time  needed for the standard FEM solution with different mesh sizes and for the GFEM with 3 and 5 directions and different mesh sizes. From this results, it is evident that the GFEM method  with the coarsest mesh size ($8h$) provides a much faster simulation time, less than half an hour when compared to the 3 hours it takes for the reference solution, and with acceptable accuracy when compared to the other 2 FEM simulations with mesh sizes of $2h$ and $4h$.
+
+
+ \begin{figure}[h!]
+ 		\centering
+		\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=8cm, height=6cm]{figures/error_dof_radial.pdf} 
+			     \caption{}
+				%\label{fig:3.7a}
+		\end{subfigure}
+
+		\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=8cm, height=6cm]{figures/error_time_radial.pdf}
+			   \caption{}
+				%\label{fig:3.7b}
+		\end{subfigure}
+ 
+	\caption{(a) Maximum cross correlation error for all seismograms  vs DOF for all time steps. (b) Maximum cross correlation error for all seismograms vs total simulation time.}
+	\label{fig:3.5}
+\end{figure}
+
+\clearpage
+\section{Example 2: Layered Medium with Low Velocity Layer}
+For this second examples, I use a layered model as shown in Figure \ref{fig:3.6}, where $h_i$  and $c_i$ are the thickness and acoustic velocity of the layer $i$ respectively. Notice that in this case the top layer presents a relative low velocity respect to the other two. Figure \ref{fig:3.7} shows the seismograms for all receivers for the reference solution. Figure \ref{fig:3.8} shows the solutions at trace 25 for (a) the standard FEM  and (b) the GFEM with 3 and 5 plane wave directions, and finally, Figure \ref{fig:3.9} shows the DOF and simulation time for all time steps vs the maximum cross correlation error. These plots shows that GFEM approach is in general more efficient, with an acceptable solution accuracy.
+
+ \begin{figure}[h!]
+	\centering
+	\includegraphics[width=9cm, height=5cm]{figures/layered_model/layered_model.pdf}
+	\caption{3-layer model of example 2, with a seismic source in the first layer (red star) and a horizontal array of 50 receivers close to surface, located beginning midway of the model upper boundary. }
+	\label{fig:3.6}
+\end{figure}
+
+ \begin{figure}[h!]
+	\centering
+	\includegraphics[width=10cm, height=13cm]{figures/layered_model/seismogram_layered.pdf}
+	\caption{ Receiver array seismograms  }
+	\label{fig:3.7}
+\end{figure}
+
+% Traces
+%*******
+ \begin{figure}[h!]
+ 		\centering
+		\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=8cm, height=6cm]{figures/layered_model/fem_layered.pdf} 
+			     \caption{}
+				%\label{fig:3.7a}
+		\end{subfigure}
+
+		\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=8cm, height=6cm]{figures/layered_model/gfem_layered.pdf}
+			   \caption{}
+				%\label{fig:3.7b}
+		\end{subfigure}
+ 
+	\caption{Seismograms at receiver 24. Reference solution is $fem\_h\_s2h$ (a) Seismograms of  FEM solutions. (b) Seismograms comparing with GFEM solutions.}
+	\label{fig:3.8}
+\end{figure}
+
+% DOF and Time v error
+%*******
+ \begin{figure}[h!]
+ 		\centering
+		\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=8cm, height=6cm]{figures/layered_model/error_dof_layered.pdf} 
+			     \caption{}
+				%\label{fig:3.7a}
+		\end{subfigure}
+
+		\begin{subfigure}{0.3\textwidth}
+				\includegraphics[width=8cm, height=6cm]{figures/layered_model/error_time_layered.pdf}
+			   \caption{}
+				%\label{fig:3.7b}
+		\end{subfigure}
+ 
+	\caption{(a) maximum cross correlation error of all seismograms vs DOF for all time steps.  (b) Maximum cross correlation error of all seismograms vs total simulation time.}
+	\label{fig:3.9}
+\end{figure}
+
+\clearpage
+\section{Proposed Examples}
+To investigate further the potential applications of the GFEM approach in acoustic wave simulation, I will include underground structures that are more relevant to exploration seismology. Thus, I propose to test  a model as in Figure \ref{fig:3.10}, which is very similar to the model in example 2 but has an underground karstic structure, that I assume is full of water. Furthermore, the top layer velocity is much lower, simulating an unconsolidated layer.
+
+Another element I will add to this model is surface  topography as in Figure \ref{fig:3.11}, with a free surface boundary condition since this type of boundaries are the source of unwanted reflections.  
+
+ 
+ \begin{figure}[h!]
+	\centering
+	\includegraphics[width=9cm, height=5cm]{figures/karstic_geometry_model.pdf}
+	\caption{Layered model including karstic structure }
+	\label{fig:3.10}
+\end{figure}
+
+
+ \begin{figure}[h!]
+	\centering
+	\includegraphics[width=9cm, height=5cm]{figures/topo.pdf}
+	\caption{Layered model including surface topography }
+	\label{fig:3.11}
+\end{figure}

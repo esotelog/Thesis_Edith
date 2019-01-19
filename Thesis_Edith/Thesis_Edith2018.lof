@@ -1,0 +1,18 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\vskip -10pt
+\contentsline {figure}{\numberline {2.1}{\ignorespaces (a) Coarse Mesh. (b) Locally refined mesh with hanging nodes \relax }}{9}{figure.caption.7}
+\addvspace {10\p@ }
+\vskip -10pt
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Homogeneous model of example 1, with a seismic source in the center (red star) and two sets of receivers (dotted circles) at 50 m and at 100 m from the center of the source.\relax }}{14}{figure.caption.8}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Solutions for receivers at 50 m from the source(see Figure \ref {fig:3.1}) . (a) Seismograms at 0 deg showing the reference solution and 2 solutions with GFEM with plane waves in 3 directions, mesh size $8h$ and source radius of $8h$ and $4h$ (b) Seismograms at 0 deg showing the reference solution and 2 solutions with GFEM with plane waves in 5 directions, mesh size $8h$ and source radius of $8h$ and $4h$\relax }}{15}{figure.caption.9}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces (a) Maximum cross correlation error for all seismograms at 50 m from the center of the source, (b) Maximum cross correlation error for all seismograms at 100 m from the center of the source. GFEM parameters for (a) and (b): 3 and 5 directions, mesh size $8h$ and $4h$, and source radius $8h$ and $4h$.\relax }}{16}{figure.caption.10}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Sketch showing the minimum source radius required according to mesh size to get a good solution approximation with the GFEM approach\relax }}{16}{figure.caption.11}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces (a) Maximum cross correlation error for all seismograms vs DOF for all time steps. (b) Maximum cross correlation error for all seismograms vs total simulation time.\relax }}{17}{figure.caption.12}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces 3-layer model of example 2, with a seismic source in the first layer (red star) and a horizontal array of 50 receivers close to surface, located beginning midway of the model upper boundary. \relax }}{18}{figure.caption.13}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Receiver array seismograms \relax }}{19}{figure.caption.14}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Seismograms at receiver 24. Reference solution is $fem\_h\_s2h$ (a) Seismograms of FEM solutions. (b) Seismograms comparing with GFEM solutions.\relax }}{20}{figure.caption.15}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces (a) maximum cross correlation error of all seismograms vs DOF for all time steps. (b) Maximum cross correlation error of all seismograms vs total simulation time.\relax }}{21}{figure.caption.16}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Layered model including karstic structure \relax }}{22}{figure.caption.17}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Layered model including surface topography \relax }}{22}{figure.caption.18}
+\addvspace {10\p@ }
